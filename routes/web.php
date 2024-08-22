@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('pages.common.home');
 });
 
+Route::get('privacy-policy', function () {
+    return view('pages.common.privacy-policy');
+});
+
+Route::get('donate', function () {
+    return view('pages.common.donate');
+});
+
 Route::get('base64-encode', function () {
     return view('pages.base64.base64-encode');
 });
@@ -47,10 +55,6 @@ Route::get('word-counter', function () {
 
 Route::get('unixtimestamp', function () {
     return view('pages.unixtimestamp');
-});
-
-Route::get('privacy-policy', function () {
-    return view('pages.common.privacy-policy');
 });
 
 Route::get('uuid', function () {

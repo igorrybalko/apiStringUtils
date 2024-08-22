@@ -68,8 +68,8 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-CXsTAHcF.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-ir3rdhRR.css">
+   <script type="module" crossorigin src="/assets/index-m7i5O81W.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-BZE4TqGs.css">
  </head>
  <body>
   <div id="root">
@@ -79,7 +79,7 @@ $appHost = env('APP_HOST');
                 <div class="wrapper">
                     <div class="d-flex header-inner">
                         <a href="/">StringUtils</a>
-                        <div class="header-inner__toggle">Toggle theme</div>
+                        @include('includes.topmenu')
                     </div>
                 </div>
             </div>
