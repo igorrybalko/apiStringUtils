@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\PageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.common.home');
-});
+Route::get('/', [PageController::class, 'home']);
 
 Route::get('privacy-policy', function () {
     return view('pages.common.privacy-policy');

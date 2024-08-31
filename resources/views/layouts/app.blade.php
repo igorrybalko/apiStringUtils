@@ -68,8 +68,8 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-m7i5O81W.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-BZE4TqGs.css">
+   <script type="module" crossorigin src="/assets/index-DHCI61lH.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-DpwNx9R5.css">
  </head>
  <body>
   <div id="root">
