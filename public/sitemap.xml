@@ -67,7 +67,22 @@
 	<priority>1.0</priority>
 </url>
 <url>
+	<loc>https://stringutils.online/minify-css</loc>
+	<lastmod>2024-09-01T21:19:17+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
 	<loc>https://stringutils.online/beautify-js</loc>
+	<lastmod>2024-09-01T21:19:17+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://stringutils.online/translit-url</loc>
+	<lastmod>2024-09-01T21:19:17+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://stringutils.online/html-formatter</loc>
 	<lastmod>2024-09-01T21:19:17+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
