@@ -68,8 +68,8 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-DHCI61lH.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-DpwNx9R5.css">
+   <script type="module" crossorigin src="/assets/index-DBb09qCF.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-DFG2tXs7.css">
  </head>
  <body>
   <div id="root">
@@ -89,6 +89,7 @@ $appHost = env('APP_HOST');
         </div>
         <footer class="ant-layout-footer">
             <div class="wrapper">
+                <div class="text-center f-sm mb-10">Convert your data as you want</div>
                 <div class="d-flex jc-sb">
                     <div>© 2024 String Utils</div>
                     <div>

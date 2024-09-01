@@ -65,6 +65,8 @@ Route::get('json-stringify', function () {
     return view('pages.json-stringify');
 });
 
+Route::get('json-minify', [PageController::class, 'jsonMinify']);
+
 Route::get('html-formatter', function () {
     return view('pages.formatter.html-formatter');
 });

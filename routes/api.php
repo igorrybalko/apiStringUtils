@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FilesController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ use App\Http\Controllers\FilesController;
 // });
 
 Route::post('/get-string-by-url', [FilesController::class, 'getFileForFormat']);
+Route::get('/get-page/{id}', [PageController::class, 'getPageContent'])->where('id', '[0-9]+');
