@@ -1,15 +1,3 @@
-@extends('layouts.app')
-
-@section('canonical', $canonical)
-@section('title', $metaTitle)
-@section('metaDescription', $metaDescription)
-
-@section('content')
-<h1>{{ $title }}</h1>
-<p>{{ $subtitle }}</p>
-<div class="info-text">
-{!! $content !!}
-</div>
 <div class="info-text">
     <h3>{{$json->title}}</h3>
     <div class="ant-row">
@@ -31,4 +19,3 @@
         </div>
     </div>
 </div>
-@stop

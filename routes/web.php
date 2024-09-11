@@ -25,21 +25,14 @@ Route::get('donate', function () {
     return view('pages.common.donate');
 });
 
-Route::get('base64-encode', function () {
-    return view('pages.base64.base64-encode');
-});
-
-Route::get('base64-decode', function () {
-    return view('pages.base64.base64-decode');
-});
+Route::get('base64-encode', [PageController::class, 'base64Encode']);
+Route::get('base64-decode', [PageController::class, 'base64Decode']);
 
 Route::get('img-to-base64', function () {
     return view('pages.base64.img-to-base64');
 });
 
-Route::get('md5-generator', function () {
-    return view('pages.md5-generator');
-});
+Route::get('md5-generator', [PageController::class, 'md5Generator']);
 
 Route::get('translit-url', function () {
     return view('pages.home');
@@ -61,10 +54,7 @@ Route::get('uuid', function () {
     return view('pages.uuid');
 });
 
-Route::get('json-stringify', function () {
-    return view('pages.json-stringify');
-});
-
+Route::get('json-stringify', [PageController::class, 'jsonStringify']);
 Route::get('json-minify', [PageController::class, 'jsonMinify']);
 
 Route::get('html-formatter', function () {

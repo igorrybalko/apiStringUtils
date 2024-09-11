@@ -5,6 +5,7 @@
 
 @section('content')
 <h1>{{ $title }}</h1>
+<p>{{ $subtitle }}</p>
 <div class="ant-row">
 @foreach ($menu as $item)
   <div class="ant-col ant-col-xs-12 ant-col-sm-12 ant-col-md-6" style="padding-left: 12px; padding-right: 12px;">

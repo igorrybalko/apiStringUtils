@@ -68,8 +68,8 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-CwJd7ZKU"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-DFG2tXs7.css">
+   <script type="module" crossorigin src="/assets/index-mj1Gpr4g.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-BvVBZnac.css">
  </head>
  <body>
   <div id="root">
@@ -83,9 +83,11 @@ $appHost = env('APP_HOST');
                     </div>
                 </div>
             </div>
-            <div class="wrapper">
-                @yield('content')
-            </div>
+            <main class="ant-layout-content">
+                <div class="wrapper">
+                    @yield('content')
+                </div>
+            </main>
         </div>
         <footer class="ant-layout-footer">
             <div class="wrapper">

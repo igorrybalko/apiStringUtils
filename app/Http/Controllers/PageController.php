@@ -9,6 +9,20 @@ use App\Helpers\AppHelper;
 
 class PageController extends Controller {
 
+    private function renderContent($id){
+        $page = DB::table( 'pages' )->find( $id );
+
+        return view( 'pages.withExample', [
+            'metaTitle' => $page->metaTitle,
+            'title' => $page->title,
+            'subtitle' => $page->subtitle,
+            'metaDescription' => $page->metaDescription,
+            'canonical' => $page->canonical,
+            'content' => $page->content,
+            'json' => json_decode( $page->json ),
+        ] );
+    }
+
     public function home() {
 
         $page = DB::table( 'pages' )->find( 1 );
@@ -16,6 +30,7 @@ class PageController extends Controller {
         return view( 'pages.common.home', [
             'metaTitle' => $page->metaTitle,
             'title' => $page->title,
+            'subtitle' => $page->subtitle,
             'metaDescription' => $page->metaDescription,
             'content' => $page->content,
             'menu' => json_decode( $page->json ),
@@ -50,16 +65,22 @@ class PageController extends Controller {
     }
 
     public function jsonMinify() {
-        $page = DB::table( 'pages' )->find( 2 );
+        return $this->renderContent(2);
+    }
 
-        return view( 'pages.formatter.json-minify', [
-            'metaTitle' => $page->metaTitle,
-            'title' => $page->title,
-            'subtitle' => $page->subtitle,
-            'metaDescription' => $page->metaDescription,
-            'canonical' => $page->canonical,
-            'content' => $page->content,
-            'json' => json_decode( $page->json ),
-        ] );
+    public function base64Encode() {
+        return $this->renderContent(3);
+    }
+
+    public function base64Decode() {
+        return $this->renderContent(4);
+    }
+
+    public function md5Generator() {
+        return $this->renderContent(5);
+    }
+
+    public function jsonStringify() {
+        return $this->renderContent(6);
     }
 }
