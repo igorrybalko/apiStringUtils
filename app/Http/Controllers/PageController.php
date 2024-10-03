@@ -9,10 +9,10 @@ use App\Helpers\AppHelper;
 
 class PageController extends Controller {
 
-    private function renderContent($id){
+    private function renderContent( $id, $tpl = 'withExample' ) {
         $page = DB::table( 'pages' )->find( $id );
 
-        return view( 'pages.withExample', [
+        return view( 'pages.' . $tpl, [
             'metaTitle' => $page->metaTitle,
             'title' => $page->title,
             'subtitle' => $page->subtitle,
@@ -65,22 +65,34 @@ class PageController extends Controller {
     }
 
     public function jsonMinify() {
-        return $this->renderContent(2);
+        return $this->renderContent( 2 );
     }
 
     public function base64Encode() {
-        return $this->renderContent(3);
+        return $this->renderContent( 3 );
     }
 
     public function base64Decode() {
-        return $this->renderContent(4);
+        return $this->renderContent( 4 );
     }
 
     public function md5Generator() {
-        return $this->renderContent(5);
+        return $this->renderContent( 5 );
     }
 
     public function jsonStringify() {
-        return $this->renderContent(6);
+        return $this->renderContent( 6 );
+    }
+
+    public function sha256Generator() {
+        return $this->renderContent( 7 );
+    }
+
+    public function donate() {
+        return $this->renderContent( 8, 'simple' );
+    }
+
+    public function privacyPolicy() {
+        return $this->renderContent( 9, 'simple' );
     }
 }

@@ -17,13 +17,9 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class, 'home']);
 
-Route::get('privacy-policy', function () {
-    return view('pages.common.privacy-policy');
-});
+Route::get('privacy-policy', [PageController::class, 'privacyPolicy']);
 
-Route::get('donate', function () {
-    return view('pages.common.donate');
-});
+Route::get('donate', [PageController::class, 'donate']);
 
 Route::get('base64-encode', [PageController::class, 'base64Encode']);
 Route::get('base64-decode', [PageController::class, 'base64Decode']);
@@ -33,6 +29,7 @@ Route::get('img-to-base64', function () {
 });
 
 Route::get('md5-generator', [PageController::class, 'md5Generator']);
+Route::get('sha-256', [PageController::class, 'sha256Generator']);
 
 Route::get('translit-url', function () {
     return view('pages.home');
