@@ -14,7 +14,7 @@ $appHost = env('APP_HOST');
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 
   <meta property="og:locale" content="en_US" />
-  <meta property="og:site_name" content="String Utils" />
+  <meta property="og:site_name" content="StringUtils" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="@yield('title')" />
   <meta
@@ -56,11 +56,11 @@ $appHost = env('APP_HOST');
      "url": "https://stringutils.online"
    }
   </script>
-  <!-- Google tag (gtag.js) -->
-  <script
-   async
-   src="https://www.googletagmanager.com/gtag/js?id=G-4WXYJQBTY9"
-  ></script>
+    @php
+        if(isset($_COOKIE['cookieAgree']) && $_COOKIE['cookieAgree'] == '1'){
+            echo '<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WXYJQBTY9"></script>';
+        }
+    @endphp
   <script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
@@ -68,8 +68,8 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-BgulD6OA.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-BvVBZnac.css">
+   <script type="module" crossorigin src="/assets/index-CkiDa8sb.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-Cz3BS3rS.css">
  </head>
  <body>
   <div id="root">
@@ -93,7 +93,7 @@ $appHost = env('APP_HOST');
             <div class="wrapper">
                 <div class="text-center f-sm mb-10">Convert your data as you want</div>
                 <div class="d-flex jc-sb">
-                    <div>© 2024 String Utils</div>
+                    <div>© 2024 StringUtils</div>
                     <div>
                         <a href="/privacy-policy">Privacy Policy</a>
                     </div>
