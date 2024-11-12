@@ -32,7 +32,7 @@ Route::get('md5-generator', [PageController::class, 'md5Generator']);
 Route::get('sha-256', [PageController::class, 'sha256Generator']);
 
 Route::get('translit-url', function () {
-    return view('pages.home');
+    return view('pages.translit-url');
 });
 
 Route::get('case-converter', function () {
