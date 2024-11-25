@@ -56,11 +56,12 @@ $appHost = env('APP_HOST');
      "url": "https://stringutils.online"
    }
   </script>
-    @php
+    <!-- @php
         if(isset($_COOKIE['cookieAgree']) && $_COOKIE['cookieAgree'] == '1'){
             echo '<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WXYJQBTY9"></script>';
         }
-    @endphp
+    @endphp -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WXYJQBTY9"></script>
   <script>
    window.dataLayer = window.dataLayer || [];
    function gtag(){dataLayer.push(arguments);}
@@ -68,8 +69,11 @@ $appHost = env('APP_HOST');
 
    gtag('config', 'G-4WXYJQBTY9');
   </script>
-   <script type="module" crossorigin src="/assets/index-CkiDa8sb.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-Cz3BS3rS.css">
+
+<!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/99afb49f8a29b1227c89b46f/script.js"></script> -->
+
+   <script type="module" crossorigin src="/assets/index-CtXqcoFa.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-iPodIejP.css">
  </head>
  <body>
   <div id="root">
