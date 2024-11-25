@@ -72,7 +72,7 @@ $appHost = env('APP_HOST');
 
 <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/99afb49f8a29b1227c89b46f/script.js"></script> -->
 
-   <script type="module" crossorigin src="/assets/index-CtXqcoFa.js"></script>
+   <script type="module" crossorigin src="/assets/index-FqsqOoRB.js"></script>
    <link rel="stylesheet" crossorigin href="/assets/index-iPodIejP.css">
  </head>
  <body>
