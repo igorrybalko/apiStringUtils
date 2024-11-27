@@ -95,4 +95,12 @@ class PageController extends Controller {
     public function privacyPolicy() {
         return $this->renderContent( 9, 'simple' );
     }
+
+    public function translitUrl() {
+        return $this->renderContent( 10, 'simple' );
+    }
+
+    public function urlEncode() {
+        return $this->renderContent( 11 );
+    }
 }
