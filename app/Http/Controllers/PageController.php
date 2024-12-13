@@ -103,4 +103,8 @@ class PageController extends Controller {
     public function urlEncode() {
         return $this->renderContent( 11 );
     }
+
+    public function urlDecode() {
+        return $this->renderContent( 12 );
+    }
 }

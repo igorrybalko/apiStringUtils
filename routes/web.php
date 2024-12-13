@@ -33,6 +33,7 @@ Route::get('sha-256', [PageController::class, 'sha256Generator']);
 
 Route::get('translit-url', [PageController::class, 'translitUrl']);
 Route::get('url-encode', [PageController::class, 'urlEncode']);
+Route::get('url-decode', [PageController::class, 'urlDecode']);
 
 Route::get('case-converter', function () {
     return view('pages.case-converter');
