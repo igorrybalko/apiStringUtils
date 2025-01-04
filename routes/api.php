@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\FilesController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ApiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,4 @@ use App\Http\Controllers\PageController;
 
 Route::post('/get-string-by-url', [FilesController::class, 'getFileForFormat']);
 Route::get('/get-page/{id}', [PageController::class, 'getPageContent'])->where('id', '[0-9]+');
+Route::post('/get-htpasswd', [ApiController::class, 'getHtpasswd']);
