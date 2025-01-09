@@ -30,6 +30,7 @@ Route::get('img-to-base64', function () {
 
 Route::get('md5-generator', [PageController::class, 'md5Generator']);
 Route::get('sha-256', [PageController::class, 'sha256Generator']);
+Route::get('htpasswd', [PageController::class, 'htpasswd']);
 
 Route::get('translit-url', [PageController::class, 'translitUrl']);
 Route::get('url-encode', [PageController::class, 'urlEncode']);

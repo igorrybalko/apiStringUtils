@@ -88,6 +88,10 @@ class PageController extends Controller {
         return $this->renderContent( 7 );
     }
 
+    public function htpasswd() {
+        return $this->renderContent( 13, 'simple' );
+    }
+
     public function donate() {
         return $this->renderContent( 8, 'simple' );
     }

@@ -72,8 +72,8 @@ $appHost = env('APP_HOST');
 
 <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/99afb49f8a29b1227c89b46f/script.js"></script> -->
 
-   <script type="module" crossorigin src="/assets/index-CZaTtlyv.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-YAnZjGKd.css">
+   <script type="module" crossorigin src="/assets/index-DEr0hst6.js"></script>
+   <link rel="stylesheet" crossorigin href="/assets/index-BMzGb-J6.css">
  </head>
  <body>
   <div id="root">
@@ -97,7 +97,7 @@ $appHost = env('APP_HOST');
             <div class="wrapper">
                 <div class="text-center f-sm mb-10">Convert your data as you want</div>
                 <div class="d-flex jc-sb">
-                    <div>© 2024 StringUtils</div>
+                    <div>© 2025 StringUtils</div>
                     <div>
                         <a href="/privacy-policy">Privacy Policy</a>
                     </div>
