@@ -100,6 +100,10 @@ class PageController extends Controller {
         return $this->renderContent( 9, 'simple' );
     }
 
+    public function contacts() {
+        return $this->renderContent( 14, 'simple' );
+    }
+
     public function translitUrl() {
         return $this->renderContent( 10, 'simple' );
     }

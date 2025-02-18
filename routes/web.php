@@ -18,7 +18,7 @@ use App\Http\Controllers\PageController;
 Route::get('/', [PageController::class, 'home']);
 
 Route::get('privacy-policy', [PageController::class, 'privacyPolicy']);
-
+Route::get('contacts', [PageController::class, 'contacts']);
 Route::get('donate', [PageController::class, 'donate']);
 
 Route::get('base64-encode', [PageController::class, 'base64Encode']);

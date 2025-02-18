@@ -101,7 +101,14 @@ $mainCss = env('MAIN_CSS');
                 <div class="d-flex jc-sb">
                     <div>© 2025 StringUtils</div>
                     <div>
-                        <a href="/privacy-policy">Privacy Policy</a>
+                        <nav>
+                            <div>
+                                <a href="/contacts">Contacts</a>
+                            </div>
+                            <div>
+                                <a href="/privacy-policy">Privacy Policy</a>
+                            </div>
+                        </nav>
                     </div>
                 </div>
             </div>
