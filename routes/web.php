@@ -44,6 +44,8 @@ Route::get('word-counter', function () {
     return view('pages.word-counter');
 });
 
+Route::get('strip-tags', [PageController::class, 'stripTags']);
+
 Route::get('unixtimestamp', function () {
     return view('pages.unixtimestamp');
 });

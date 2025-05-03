@@ -115,4 +115,8 @@ class PageController extends Controller {
     public function urlDecode() {
         return $this->renderContent( 12 );
     }
+
+    public function stripTags() {
+        return $this->renderContent( 15, 'simple' );
+    }
 }
