@@ -76,6 +76,9 @@ $mainCss = env('MAIN_CSS');
 
    <script type="module" crossorigin src="/assets/index-{{$mainJs}}.js"></script>
    <link rel="stylesheet" crossorigin href="/assets/index-{{$mainCss}}.css">
+
+   <!-- Bidvertiser2100164 -->
+        
  </head>
  <body>
   <div id="root">
