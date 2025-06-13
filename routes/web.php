@@ -23,10 +23,7 @@ Route::get('donate', [PageController::class, 'donate']);
 
 Route::get('base64-encode', [PageController::class, 'base64Encode']);
 Route::get('base64-decode', [PageController::class, 'base64Decode']);
-
-Route::get('img-to-base64', function () {
-    return view('pages.base64.img-to-base64');
-});
+Route::get('img-to-base64', [PageController::class, 'imgToBase64']);
 
 Route::get('md5-generator', [PageController::class, 'md5Generator']);
 Route::get('sha-256', [PageController::class, 'sha256Generator']);

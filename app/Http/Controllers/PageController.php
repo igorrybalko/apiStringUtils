@@ -10,7 +10,15 @@ use App\Helpers\AppHelper;
 class PageController extends Controller {
 
     private function renderContent( $id, $tpl = 'withExample' ) {
+
+        $similar = [];
+
         $page = DB::table( 'pages' )->find( $id );
+        
+        if($page->similar){
+            $simIds = explode(",", $page->similar);
+            $similar = DB::table( 'main_menu' )->whereIn('id', $simIds)->get()->toArray();
+        }
 
         return view( 'pages.' . $tpl, [
             'metaTitle' => $page->metaTitle,
@@ -20,12 +28,15 @@ class PageController extends Controller {
             'canonical' => $page->canonical,
             'content' => $page->content,
             'json' => json_decode( $page->json ),
+            'similar' => $similar,
+            'viewTag' => $page->viewTag,
         ] );
     }
 
     public function home() {
 
         $page = DB::table( 'pages' )->find( 1 );
+        $menu = DB::table( 'main_menu' )->get();
 
         return view( 'pages.common.home', [
             'metaTitle' => $page->metaTitle,
@@ -33,7 +44,7 @@ class PageController extends Controller {
             'subtitle' => $page->subtitle,
             'metaDescription' => $page->metaDescription,
             'content' => $page->content,
-            'menu' => json_decode( $page->json ),
+            'menu' => $menu,
         ] );
     }
 
@@ -74,6 +85,10 @@ class PageController extends Controller {
 
     public function base64Decode() {
         return $this->renderContent( 4 );
+    }
+
+    public function imgToBase64() {
+        return $this->renderContent( 17, 'withoutExample' );
     }
 
     public function md5Generator() {

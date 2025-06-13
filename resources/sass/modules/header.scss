@@ -1,0 +1,24 @@
+@use "../core/vars.scss" as *;
+
+header {
+    height: 64px;
+    color: $c-light;
+    line-height: 64px;
+    background: $c-d-blue;
+
+    a {
+        color: $c-light;
+    }
+}
+
+.anticon {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+    font-style: normal;
+    line-height: 0;
+    text-align: center;
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizeLegibility;
+}

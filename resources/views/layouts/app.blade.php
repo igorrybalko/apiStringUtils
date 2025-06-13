@@ -74,37 +74,37 @@ $mainCss = env('MAIN_CSS');
 
 <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/99afb49f8a29b1227c89b46f/script.js"></script> -->
 
-   <script type="module" crossorigin src="/assets/index-{{$mainJs}}.js"></script>
-   <link rel="stylesheet" crossorigin href="/assets/index-{{$mainCss}}.css">
-
    <!-- Bidvertiser2100164 -->
+
+   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/js/app.js'])
         
  </head>
  <body>
   <div id="root">
     <div class="ant-layout">
         <div>
-            <div class="ant-layout-header">
+            <header>
                 <div class="wrapper">
-                    <div class="d-flex header-inner">
+                    <div class="flex justify-between header-inner">
                         <a href="/">StringUtils</a>
                         @include('includes.topmenu')
                     </div>
                 </div>
-            </div>
-            <main class="ant-layout-content">
+            </header>
+            <main class="mb-6 pt-6">
                 <div class="wrapper">
                     @yield('content')
                 </div>
             </main>
+            <app-share></app-share>
         </div>
-        <footer class="ant-layout-footer">
+        <footer class="py-4">
             <div class="wrapper">
-                <div class="text-center f-sm mb-10">Convert your data as you want</div>
-                <div class="d-flex jc-sb">
+                <div class="text-center text-xs mb-2">Convert your data as you want</div>
+                <div class="flex justify-between">
                     <div>© 2025 StringUtils</div>
                     <div>
-                        <nav>
+                        <nav class="mb-2">
                             <div>
                                 <a href="/contacts">Contacts</a>
                             </div>
@@ -112,6 +112,7 @@ $mainCss = env('MAIN_CSS');
                                 <a href="/privacy-policy">Privacy Policy</a>
                             </div>
                         </nav>
+                        @include('includes.hitua')
                     </div>
                 </div>
             </div>

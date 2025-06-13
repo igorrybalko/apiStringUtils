@@ -1,4 +1,4 @@
-<div class="d-flex top-menu">
+<div class="flex top-menu">
   <a href="/donate">
     <span role="img" aria-label="heart" class="anticon anticon-heart">
       <svg viewBox="64 64 896 896" focusable="false" data-icon="heart" width="1em" height="1em" fill="currentColor" aria-hidden="true">
