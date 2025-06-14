@@ -2,7 +2,7 @@ import { createApp, defineAsyncComponent } from "vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 
-import AppShare from "./components/AppShare.vue";
+import AppShare from "./components/global/AppShare.vue";
 
 const app = createApp({}).use(ElementPlus).component("AppShare", AppShare);
 

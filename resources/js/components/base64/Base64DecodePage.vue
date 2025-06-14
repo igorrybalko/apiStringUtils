@@ -72,9 +72,9 @@ function b64EncodeUnicode(str: string) {
   );
  }
 
-const submitForm = async (formEl: FormInstance | undefined) => {
+const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
-    await formEl.validate((valid) => {
+    formEl.validate((valid) => {
         if (valid) {
             result.value = b64EncodeUnicode(form.text);
         }

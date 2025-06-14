@@ -104,7 +104,7 @@ class PageController extends Controller {
     }
 
     public function htpasswd() {
-        return $this->renderContent( 13, 'simple' );
+        return $this->renderContent( 13, 'withoutExample' );
     }
 
     public function donate() {

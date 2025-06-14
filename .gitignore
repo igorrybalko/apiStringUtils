@@ -21,3 +21,5 @@ yarn-error.log
 composer.lock
 *.zip
 package-lock.json
+auto-imports.d.ts
+components.d.ts
