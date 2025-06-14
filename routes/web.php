@@ -33,14 +33,8 @@ Route::get('translit-url', [PageController::class, 'translitUrl']);
 Route::get('url-encode', [PageController::class, 'urlEncode']);
 Route::get('url-decode', [PageController::class, 'urlDecode']);
 
-Route::get('case-converter', function () {
-    return view('pages.case-converter');
-});
-
-Route::get('word-counter', function () {
-    return view('pages.word-counter');
-});
-
+Route::get('case-converter', [PageController::class, 'caseConverter'] );
+Route::get('word-counter', [PageController::class, 'wordCounter']);
 Route::get('strip-tags', [PageController::class, 'stripTags']);
 
 Route::get('unixtimestamp', function () {

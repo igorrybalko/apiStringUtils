@@ -3,38 +3,35 @@
         <el-form
             :model="form"
             label-width="auto"
-            ref="ruleFormRef"
+            ref="formRef"
             :rules="rules"
         >
-            <el-form-item label="Enter Base64" label-position="top" prop="text">
+            <el-form-item label="Enter text" label-position="top" prop="text">
                 <el-input
                     v-model="form.text"
                     type="textarea"
-                    placeholder="Type your Base64..."
+                    placeholder="Type your text..."
                 />
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" @click="submitForm(ruleFormRef)"
-                    >Decode</el-button
+                <el-button type="primary" @click="submitForm(formRef)"
+                    >Encode</el-button
                 >
-                <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
+                <el-button @click="resetForm(formRef)">Reset</el-button>
             </el-form-item>
         </el-form>
         <el-divider />
-        <div class="caption">Result:</div>
+        <div class="caption">Result in Base64:</div>
         <div class="p-textarea mb-6">{{ result }}</div>
-        <el-button type="primary" @click="copyText" :icon="CopyDocument">
-            Copy
-        </el-button>
+        <AppCopyBtn :text="result" />
         <el-divider />
     </div>
 </template>
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
-import copy from "copy-to-clipboard";
-import { ElNotification } from "element-plus";
-import { CopyDocument } from "@element-plus/icons-vue";
+
+import AppCopyBtn from "../common/AppCopyBtn.vue";
 
 import type { FormInstance, FormRules } from "element-plus";
 
@@ -42,7 +39,7 @@ interface RuleForm {
     text: string;
 }
 
-const ruleFormRef = ref<FormInstance>();
+const formRef = ref<FormInstance>();
 
 const form = reactive({
     text: "",
@@ -72,9 +69,9 @@ function b64EncodeUnicode(str: string) {
   );
  }
 
-const submitForm = (formEl: FormInstance | undefined) => {
+const submitForm = async (formEl: FormInstance | undefined) => {
     if (!formEl) return;
-    formEl.validate((valid) => {
+    await formEl.validate((valid) => {
         if (valid) {
             result.value = b64EncodeUnicode(form.text);
         }
@@ -86,15 +83,4 @@ const resetForm = (formEl: FormInstance | undefined) => {
     formEl.resetFields();
     result.value = "";
 };
-
-function copyText() {
-    if (result.value.length) {
-        copy(result.value);
-
-        ElNotification({
-            title: "Copied",
-            type: "success",
-        });
-    }
-}
 </script>

@@ -120,7 +120,7 @@ class PageController extends Controller {
     }
 
     public function translitUrl() {
-        return $this->renderContent( 10, 'simple' );
+        return $this->renderContent( 10, 'withoutExample' );
     }
 
     public function urlEncode() {
@@ -133,5 +133,13 @@ class PageController extends Controller {
 
     public function stripTags() {
         return $this->renderContent( 15, 'simple' );
+    }
+
+    public function caseConverter() {
+        return $this->renderContent( 18, 'withoutExample' );
+    }
+
+    public function wordCounter() {
+        return $this->renderContent( 19, 'withoutExample' );
     }
 }

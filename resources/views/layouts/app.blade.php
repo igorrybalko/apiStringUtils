@@ -76,12 +76,12 @@ $mainCss = env('MAIN_CSS');
 
    <!-- Bidvertiser2100164 -->
 
-   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/js/app.js'])
+   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/ts/app.ts'])
         
  </head>
  <body>
   <div id="root">
-    <div class="ant-layout">
+    
         <div>
             <header>
                 <div class="wrapper">
@@ -117,7 +117,7 @@ $mainCss = env('MAIN_CSS');
                 </div>
             </div>
         </footer>
-    </div>
+    
   </div>
 
  </body>

@@ -45,9 +45,7 @@
         <el-divider />
         <div class="caption">Result:</div>
         <div class="p-textarea mb-6">{{ result }}</div>
-        <el-button type="primary" @click="copyText" :icon="CopyDocument">
-            Copy
-        </el-button>
+        <AppCopyBtn :text="result" />
         <AppDowloadBtn v-if="result" name="base64.txt" :content="result" />
         <el-divider />
     </div>
@@ -56,10 +54,9 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { genFileId, ElNotification } from "element-plus";
-import { CopyDocument } from "@element-plus/icons-vue";
-import copy from "copy-to-clipboard";
 
 import AppDowloadBtn from "../common/AppDowloadBtn.vue";
+import AppCopyBtn from "../common/AppCopyBtn.vue";
 
 import type {
     UploadInstance,
@@ -133,8 +130,6 @@ const submitForm = async (formEl: FormInstance | undefined) => {
     if (form.img.length) {
         loading.value = true;
 
-        console.log(form.img[0]);
-
         try {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -155,15 +150,4 @@ const submitForm = async (formEl: FormInstance | undefined) => {
         }
     }
 };
-
-function copyText() {
-    if (result.value.length) {
-        copy(result.value);
-
-        ElNotification({
-            title: "Copied",
-            type: "success",
-        });
-    }
-}
 </script>

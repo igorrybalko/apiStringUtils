@@ -93,3 +93,19 @@ label {
     margin-bottom: 16px;
     font-size: 20px;
 }
+
+el-menu-item {
+    display: block;
+}
+
+body,
+html,
+#root {
+ height: 100%;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
