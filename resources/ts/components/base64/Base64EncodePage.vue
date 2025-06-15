@@ -1,11 +1,6 @@
 <template>
     <div>
-        <el-form
-            :model="form"
-            label-width="auto"
-            ref="formRef"
-            :rules="rules"
-        >
+        <el-form :model="form" label-width="auto" ref="formRef" :rules="rules">
             <el-form-item label="Enter text" label-position="top" prop="text">
                 <el-input
                     v-model="form.text"
@@ -56,22 +51,22 @@ const rules = reactive<FormRules<RuleForm>>({
 const result = ref("");
 
 function b64EncodeUnicode(str: string) {
-  // first we use encodeURIComponent to get percent-encoded UTF-8,
-  // then we convert the percent encodings into raw bytes which
-  // can be fed into btoa.
-  return btoa(
-   encodeURIComponent(str).replace(
-    /%([0-9A-F]{2})/g,
-    function toSolidBytes(_match, p1) {
-     return String.fromCharCode(parseInt('0x' + p1, 16));
-    }
-   )
-  );
- }
+    // first we use encodeURIComponent to get percent-encoded UTF-8,
+    // then we convert the percent encodings into raw bytes which
+    // can be fed into btoa.
+    return btoa(
+        encodeURIComponent(str).replace(
+            /%([0-9A-F]{2})/g,
+            function toSolidBytes(_match, p1) {
+                return String.fromCharCode(parseInt("0x" + p1, 16));
+            }
+        )
+    );
+}
 
-const submitForm = async (formEl: FormInstance | undefined) => {
+const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
-    await formEl.validate((valid) => {
+    formEl.validate((valid) => {
         if (valid) {
             result.value = b64EncodeUnicode(form.text);
         }

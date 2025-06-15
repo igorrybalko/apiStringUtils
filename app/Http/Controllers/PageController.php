@@ -132,7 +132,7 @@ class PageController extends Controller {
     }
 
     public function stripTags() {
-        return $this->renderContent( 15, 'simple' );
+        return $this->renderContent( 15, 'withoutExample' );
     }
 
     public function caseConverter() {
@@ -141,5 +141,9 @@ class PageController extends Controller {
 
     public function wordCounter() {
         return $this->renderContent( 19, 'withoutExample' );
+    }
+
+    public function unixtimestamp() {
+        return $this->renderContent( 20, 'simple' );
     }
 }

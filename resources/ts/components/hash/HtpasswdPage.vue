@@ -4,9 +4,8 @@
             <el-form-item label="Username" label-position="top" prop="username">
                 <el-input
                     v-model="form.username"
-                    type="password"
+                    type="text"
                     placeholder="Type your username..."
-                    show-password
                 />
             </el-form-item>
             <el-form-item label="Password" label-position="top" prop="password">
@@ -54,17 +53,15 @@ const form = reactive({
     password: "",
 });
 
+const requiredRule = {
+    required: true,
+    message: "The field is required",
+    trigger: "blur",
+};
+
 const rules = reactive<FormRules<RuleForm>>({
-    username: {
-        required: true,
-        message: "Please enter data",
-        trigger: "blur",
-    },
-    password: {
-        required: true,
-        message: "Please enter data",
-        trigger: "blur",
-    },
+    username: requiredRule,
+    password: requiredRule,
 });
 
 const result = ref("");

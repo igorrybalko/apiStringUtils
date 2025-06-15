@@ -6,13 +6,14 @@
 
 @section('content')
 
-<div class="info-text">
-    <h1>{{ $title }}</h1>
+<h1>{{ $title }}</h1>
     @if ($subtitle)
-    <p>{{ $subtitle }}</p>
+        <p>{{ $subtitle }}</p>
     @endif
-    <div>
+    @if ($viewTag)
+        <{{ $viewTag }}></{{ $viewTag }}>
+    @endif
+<div class="info-text">
     {!! $content !!}
-    </div>
 </div>
 @stop

@@ -5,33 +5,33 @@
                 <el-input
                     v-model="form.text"
                     type="textarea"
-                    placeholder="Type your text..."
+                    placeholder="Type your text.."
                 />
             </el-form-item>
             <el-form-item prop="trim">
-                <el-checkbox v-model="form.trim"
-                    >Trim start and end spaces</el-checkbox
+                <el-checkbox v-model="form.trim" @change="changeTrimValue"
+                    >Clear line breaks and spaces</el-checkbox
                 >
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="submitForm(formRef)"
-                    >Count</el-button
+                    >Strip tags</el-button
                 >
                 <el-button @click="resetForm(formRef)">Reset</el-button>
             </el-form-item>
         </el-form>
         <el-divider />
         <div class="caption">Result:</div>
-        <div class="mb-2">
-            All symbols: <el-tag effect="plain">{{ countAllSymbols }}</el-tag>
+        <div class="p-textarea mb-6" v-if="form.trim">{{ result }}</div>
+        <div v-else class="mb-6">
+            <el-input :value="result" type="textarea" />
         </div>
-        <div class="mb-2">
-            Symbols without spaces:
-            <el-tag effect="plain">{{ countWithoutSpace }}</el-tag>
-        </div>
-        <div>
-            Words: <el-tag effect="plain">{{ cntWords }}</el-tag>
-        </div>
+        <AppCopyBtn :text="txtDownload" />
+        <AppDowloadBtn
+            v-if="txtDownload"
+            name="stripped-tags.txt"
+            :content="txtDownload"
+        />
         <el-divider />
     </div>
 </template>
@@ -39,6 +39,9 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { ElNotification } from "element-plus";
+
+import AppCopyBtn from "../common/AppCopyBtn.vue";
+import AppDowloadBtn from "../common/AppDowloadBtn.vue";
 
 import type { FormInstance, FormRules } from "element-plus";
 
@@ -49,7 +52,7 @@ interface RuleForm {
 
 const formRef = ref<FormInstance>();
 
-const form = reactive({
+const form = reactive<RuleForm>({
     text: "",
     trim: true,
 });
@@ -62,40 +65,40 @@ const rules = reactive<FormRules<RuleForm>>({
     },
 });
 
-const countAllSymbols = ref(0);
-const countWithoutSpace = ref(0);
-const cntWords = ref(0);
+const result = ref("");
+const txtDownload = ref("");
 
-const countWords = (str: string) => {
-    str = str.trim();
-    const words = str.match(/\S+/g);
-
-    if (words) {
-        return words.length;
+function setTxtForFile(txt: string, checked: boolean) {
+    let copiedTxt = txt;
+    if (checked) {
+        copiedTxt = txt.replace(/\s+/g, " ");
     }
-    return 0;
-};
+    txtDownload.value = copiedTxt;
+}
+
+function changeTrimValue() {
+    setTxtForFile(result.value, form.trim);
+}
 
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
     formEl.validate((valid) => {
         if (valid) {
             try {
-                let str = form.text;
-                if (form.trim) {
-                    str = str.trim();
-                }
+                let divEl = document.createElement("div");
+                divEl.innerHTML = form.text;
+                const localres = divEl.textContent || divEl.innerText || "";
 
-                countAllSymbols.value = str.length;
+                const txt = localres.trim();
 
-                const withoutSpace = str.replace(/\s/g, "").length;
-                countWithoutSpace.value = withoutSpace;
+                result.value = txt;
 
-                cntWords.value = countWords(str);
+                setTimeout(() => {
+                    setTxtForFile(txt, form.trim);
+                }, 500);
             } catch (err) {
                 ElNotification({
                     title: "Error",
-                    message: "invalid text",
                     type: "error",
                 });
             }
@@ -106,8 +109,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
 const resetForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
     formEl.resetFields();
-    countAllSymbols.value = 0;
-    countWithoutSpace.value = 0;
-    cntWords.value = 0;
+    result.value = "";
+    txtDownload.value = "";
 };
 </script>

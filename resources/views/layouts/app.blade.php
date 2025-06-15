@@ -43,10 +43,9 @@ $mainCss = env('MAIN_CSS');
   <meta
      name="description"
      content="@yield('metaDescription')"
-     data-react-helmet="true"
     />
 
-    <link rel="canonical" href="{{$appHost}}@yield('canonical')" data-react-helmet="true">
+    <link rel="canonical" href="{{$appHost}}@yield('canonical')">
     
   <title>@yield('title')</title>
   <script type="application/ld+json">

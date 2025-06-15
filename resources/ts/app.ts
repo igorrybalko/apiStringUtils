@@ -80,6 +80,18 @@ switch (location.pathname) {
         initMainComp(cName, "./components/text/" + cName + ".vue");
         break;
     }
+
+    case "/strip-tags": {
+        const cName = "StripTagsPage";
+        initMainComp(cName, "./components/text/" + cName + ".vue");
+        break;
+    }
+
+    case "/unixtimestamp": {
+        const cName = "UnixtimestampPage";
+        initMainComp(cName, "./components/time/" + cName + ".vue");
+        break;
+    }
 }
 
 app.mount("#root");

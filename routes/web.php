@@ -37,9 +37,7 @@ Route::get('case-converter', [PageController::class, 'caseConverter'] );
 Route::get('word-counter', [PageController::class, 'wordCounter']);
 Route::get('strip-tags', [PageController::class, 'stripTags']);
 
-Route::get('unixtimestamp', function () {
-    return view('pages.unixtimestamp');
-});
+Route::get('unixtimestamp', [PageController::class, 'unixtimestamp']);
 
 Route::get('uuid', function () {
     return view('pages.uuid');

@@ -124,7 +124,7 @@ const converter = {
     },
 };
 
-const submitForm = async (formEl: FormInstance | undefined) => {
+const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
 
     if (form.img.length) {
