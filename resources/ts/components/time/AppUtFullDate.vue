@@ -88,7 +88,7 @@
                 style="width: 100%"
                 :show-header="false"
             >
-                <el-table-column prop="cap" width="120" />
+                <el-table-column prop="cap" width="160" />
                 <el-table-column prop="val" />
             </el-table>
         </div>

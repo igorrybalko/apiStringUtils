@@ -1,6 +1,6 @@
 <template>
     <el-button type="primary" @click="copyText" :icon="CopyDocument">
-        Copy
+        {{ name }}
     </el-button>
 </template>
 
@@ -13,6 +13,10 @@ const props = defineProps({
     text: {
         type: String,
         required: true,
+    },
+    name: {
+        type: String,
+        default: "Copy",
     },
 });
 

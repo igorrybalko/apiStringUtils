@@ -146,4 +146,12 @@ class PageController extends Controller {
     public function unixtimestamp() {
         return $this->renderContent( 20, 'simple' );
     }
+
+    public function uuid() {
+        return $this->renderContent( 21, 'withoutExample' );
+    }
+
+    public function formatterHtml() {
+        return $this->renderContent( 22, 'withoutExample' );
+    }
 }

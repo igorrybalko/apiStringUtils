@@ -28,6 +28,7 @@ Route::get('img-to-base64', [PageController::class, 'imgToBase64']);
 Route::get('md5-generator', [PageController::class, 'md5Generator']);
 Route::get('sha-256', [PageController::class, 'sha256Generator']);
 Route::get('htpasswd', [PageController::class, 'htpasswd']);
+Route::get('uuid', [PageController::class, 'uuid']);
 
 Route::get('translit-url', [PageController::class, 'translitUrl']);
 Route::get('url-encode', [PageController::class, 'urlEncode']);
@@ -39,16 +40,9 @@ Route::get('strip-tags', [PageController::class, 'stripTags']);
 
 Route::get('unixtimestamp', [PageController::class, 'unixtimestamp']);
 
-Route::get('uuid', function () {
-    return view('pages.uuid');
-});
-
 Route::get('json-stringify', [PageController::class, 'jsonStringify']);
 Route::get('json-minify', [PageController::class, 'jsonMinify']);
-
-Route::get('html-formatter', function () {
-    return view('pages.formatter.html-formatter');
-});
+Route::get('html-formatter', [PageController::class, 'formatterHtml']);
 
 Route::get('minify-css', function () {
     return view('pages.formatter.minify-css');

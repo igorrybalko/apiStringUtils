@@ -92,6 +92,30 @@ switch (location.pathname) {
         initMainComp(cName, "./components/time/" + cName + ".vue");
         break;
     }
+
+    case "/uuid": {
+        const cName = "UuidPage";
+        initMainComp(cName, "./components/hash/" + cName + ".vue");
+        break;
+    }
+
+    case "/json-stringify": {
+        const cName = "JsonStringifyPage";
+        initMainComp(cName, "./components/text/" + cName + ".vue");
+        break;
+    }
+
+    case "/json-minify": {
+        const cName = "JsonMinifyPage";
+        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        break;
+    }
+
+    case "/html-formatter": {
+        const cName = "FormatterHtmlPage";
+        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        break;
+    }
 }
 
 app.mount("#root");
