@@ -154,4 +154,16 @@ class PageController extends Controller {
     public function formatterHtml() {
         return $this->renderContent( 22, 'withoutExample' );
     }
+
+    public function minifyCss() {
+        return $this->renderContent( 23, 'withoutExample' );
+    }
+
+    public function beautifyCss() {
+        return $this->renderContent( 24, 'withoutExample' );
+    }
+
+    public function beautifyJs() {
+        return $this->renderContent( 25, 'withoutExample' );
+    }
 }

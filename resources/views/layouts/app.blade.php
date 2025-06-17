@@ -76,12 +76,19 @@ $mainCss = env('MAIN_CSS');
    <!-- Bidvertiser2100164 -->
 
    @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/ts/app.ts'])
+
+    @php
+        $cssClass = "";
+        if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == '1'){
+            $cssClass = "dark-theme";
+        }
+    @endphp
         
  </head>
  <body>
   <div id="root">
     
-        <div>
+        <div :class="{'dark-theme': darkTheme}" class="{{$cssClass}}">
             <header>
                 <div class="wrapper">
                     <div class="flex justify-between header-inner">

@@ -22,3 +22,17 @@ header {
     vertical-align: -0.125em;
     text-rendering: optimizeLegibility;
 }
+
+.header-inner__toggle {
+    transition: all 0.3s;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        color: #69b1ff;
+    }
+
+    .anticon-sun {
+        display: none;
+    }
+}

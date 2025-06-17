@@ -2,11 +2,15 @@ import { createApp, defineAsyncComponent } from "vue";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import { createPinia } from "pinia";
+import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 import AppShare from "./components/global/AppShare.vue";
+import root from "./root";
 
 const pinia = createPinia();
-const app = createApp({}).use(ElementPlus).component("AppShare", AppShare);
+pinia.use(piniaPluginPersistedstate);
+
+const app = createApp(root).use(ElementPlus).component("AppShare", AppShare);
 app.use(pinia);
 
 function initMainComp(cName, path) {
@@ -113,6 +117,24 @@ switch (location.pathname) {
 
     case "/html-formatter": {
         const cName = "FormatterHtmlPage";
+        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        break;
+    }
+
+    case "/minify-css": {
+        const cName = "MinifyCssPage";
+        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        break;
+    }
+
+    case "/beautify-css": {
+        const cName = "BeautifyCssPage";
+        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        break;
+    }
+
+    case "/beautify-js": {
+        const cName = "BeautifyJsPage";
         initMainComp(cName, "./components/formatter/" + cName + ".vue");
         break;
     }

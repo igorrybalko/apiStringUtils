@@ -6,6 +6,11 @@
 
 a {
     color: #006bff;
+    transition: all 0.3s;
+
+    &:hover {
+        color: #69b1ff;
+    }
 }
 
 h1,

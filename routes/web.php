@@ -43,15 +43,6 @@ Route::get('unixtimestamp', [PageController::class, 'unixtimestamp']);
 Route::get('json-stringify', [PageController::class, 'jsonStringify']);
 Route::get('json-minify', [PageController::class, 'jsonMinify']);
 Route::get('html-formatter', [PageController::class, 'formatterHtml']);
-
-Route::get('minify-css', function () {
-    return view('pages.formatter.minify-css');
-});
-
-Route::get('beautify-js', function () {
-    return view('pages.formatter.beautify-js');
-});
-
-Route::get('beautify-css', function () {
-    return view('pages.formatter.beautify-css');
-});
+Route::get('minify-css', [PageController::class, 'minifyCss']);
+Route::get('beautify-js', [PageController::class, 'beautifyJs']);
+Route::get('beautify-css', [PageController::class, 'beautifyCss']);

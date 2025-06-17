@@ -3,6 +3,9 @@ import { defineStore } from "pinia";
 import http from "../helpers/httpHelper";
 
 export const useCommonStore = defineStore("common", {
+    state: () => ({
+        darkTheme: false,
+    }),
     actions: {
         getHtpasswd(password: string) {
             return http
@@ -17,4 +20,5 @@ export const useCommonStore = defineStore("common", {
                 .then((res: { data: { content: string } }) => res.data);
         },
     },
+    persist: true,
 });

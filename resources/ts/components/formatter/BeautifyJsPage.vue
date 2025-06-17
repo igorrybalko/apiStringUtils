@@ -2,10 +2,10 @@
     <div>
         <el-form :model="form" label-width="auto" ref="formRef">
             <div class="mb-5">
-                <label class="el-form-item__label">Enter your HTML</label>
+                <label class="el-form-item__label">Enter your JS code</label>
                 <v-ace-editor
                     v-model:value="editorValue"
-                    lang="html"
+                    lang="javascript"
                     theme="chrome"
                     style="height: 250px"
                 />
@@ -36,13 +36,13 @@
             <label class="el-form-item__label">Result</label>
             <v-ace-editor
                 v-model:value="result"
-                lang="html"
+                lang="javascript"
                 theme="chrome"
                 style="height: 250px"
             />
         </div>
         <AppCopyBtn :text="result" />
-        <AppDowloadBtn v-if="result" name="file.html" :content="result" />
+        <AppDowloadBtn v-if="result" name="file.js" :content="result" />
         <el-divider />
     </div>
 </template>
@@ -50,9 +50,10 @@
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { VAceEditor } from "vue3-ace-editor";
-import { prettify } from "htmlfy";
+// @ts-ignore
+import jsBeautify from "js-beautify";
 
-import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-chrome";
 import "ace-builds/src-noconflict/ext-language_tools";
 
@@ -76,24 +77,9 @@ const editorValue = ref("");
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
     if (editorValue.value) {
-        const html = editorValue.value.trim();
-        let str = html;
+        const str = editorValue.value.trim();
 
-        const doctype = html.slice(0, 15).toLowerCase();
-
-        if (doctype === "<!doctype html>") {
-            str = html.slice(15);
-        }
-
-        let txt = prettify(str, {
-            tab_size: form.tabSize,
-        });
-
-        if (doctype === "<!doctype html>") {
-            txt = `<!DOCTYPE html>\n${txt}`;
-        }
-
-        result.value = txt;
+        result.value = jsBeautify(str, { indent_size: form.tabSize });
     }
 };
 

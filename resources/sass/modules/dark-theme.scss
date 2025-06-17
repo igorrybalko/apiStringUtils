@@ -1,0 +1,14 @@
+@use "../core/vars.scss" as *;
+
+.dark-theme {
+    background: #272727;
+    color: #fff;
+
+    .anticon-moon {
+        display: none;
+    }
+
+    .anticon-sun {
+        display: inline-block;
+    }
+}
