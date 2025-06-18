@@ -19,7 +19,7 @@ export default defineConfig({
             input: [
                 "resources/sass/app.scss",
                 "resources/css/style.css",
-                "resources/ts/app.ts",
+                "resources/js/app.ts",
             ],
             refresh: true,
         }),

@@ -2,6 +2,7 @@
 
 @section('title', $metaTitle)
 @section('metaDescription', $metaDescription)
+@section('pageType', 'home')
 
 @section('content')
 <h1>{{ $title }}</h1>

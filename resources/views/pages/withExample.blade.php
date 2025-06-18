@@ -3,6 +3,7 @@
 @section('canonical', $canonical)
 @section('title', $metaTitle)
 @section('metaDescription', $metaDescription)
+@section('pageType', 'withExample')
 
 @section('content')
 <div class="lg:flex gap-x-4">

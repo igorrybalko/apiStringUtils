@@ -5,12 +5,17 @@ import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 
 import AppShare from "./components/global/AppShare.vue";
+import AppBid from "./components/global/AppBid.vue";
 import root from "./root";
 
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
-const app = createApp(root).use(ElementPlus).component("AppShare", AppShare);
+const app = createApp(root)
+    .use(ElementPlus)
+    .component("AppShare", AppShare)
+    .component("AppBid", AppBid);
+
 app.use(pinia);
 
 function initMainComp(cName, path) {

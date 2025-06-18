@@ -1,5 +1,6 @@
 @use "../core/vars.scss" as *;
 
+[data-dark="1"],
 .dark-theme {
     background: #272727;
     color: #fff;
@@ -10,5 +11,40 @@
 
     .anticon-sun {
         display: inline-block;
+    }
+
+    .el-form-item__label {
+        color: #fff;
+    }
+
+    .el-menu {
+        background-color: #272727;
+    }
+
+    .el-input__inner,
+    .el-textarea__inner,
+    .p-textarea,
+    .p-input {
+        background: #333;
+        color: #fff;
+    }
+
+    .el-input__wrapper {
+        background: #333;
+    }
+
+    .el-table {
+        background: #1d1d1d;
+        td,
+        th {
+            &.el-table__cell {
+                background: #1d1d1d;
+                color: #fff;
+            }
+        }
+    }
+
+    .el-table--enable-row-hover .el-table__body tr:hover > td.el-table__cell {
+        background: #4c4b4b;
     }
 }

@@ -75,20 +75,26 @@ $mainCss = env('MAIN_CSS');
 
    <!-- Bidvertiser2100164 -->
 
-   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/ts/app.ts'])
+   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/js/app.ts'])
 
     @php
-        $cssClass = "";
+        $cssClass = "0";
         if(isset($_COOKIE['theme']) && $_COOKIE['theme'] == '1'){
-            $cssClass = "dark-theme";
+            $cssClass = "1";
         }
     @endphp
+
+    <script id="page-data" type="application/json">
+        {
+            "pageType": "@yield('pageType')"
+        }
+    </script>
         
  </head>
- <body>
+ <body class="page-@yield('pageType')">
   <div id="root">
     
-        <div :class="{'dark-theme': darkTheme}" class="{{$cssClass}}">
+        <div :class="{'dark-theme': darkTheme}" class="flex-1" ref="mainCont" data-dark="{{$cssClass}}">
             <header>
                 <div class="wrapper">
                     <div class="flex justify-between header-inner">

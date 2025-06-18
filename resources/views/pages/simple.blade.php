@@ -3,6 +3,7 @@
 @section('canonical', $canonical)
 @section('title', $metaTitle)
 @section('metaDescription', $metaDescription)
+@section('pageType', 'simple')
 
 @section('content')
 

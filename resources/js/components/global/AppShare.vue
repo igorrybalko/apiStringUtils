@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper app-share">
         <div class="mb-6">
             <div class="mb-2">Share:</div>
 
