@@ -75,7 +75,7 @@ $mainCss = env('MAIN_CSS');
 
    <!-- Bidvertiser2100164 -->
 
-   @vite(['resources/sass/app.scss', 'resources/css/style.css', 'resources/js/app.ts'])
+   @vite(['resources/sass/app.scss', 'resources/css/style.css'])
 
     @php
         $cssClass = "0";
@@ -131,6 +131,6 @@ $mainCss = env('MAIN_CSS');
         </footer>
     
   </div>
-
+  @vite(['resources/js/app.ts'])
  </body>
 </html>
