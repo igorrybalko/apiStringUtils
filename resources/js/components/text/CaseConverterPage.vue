@@ -48,7 +48,7 @@ interface RuleForm {
 
 const formRef = ref<FormInstance>();
 
-const form = reactive({
+const form = reactive<RuleForm>({
     text: "",
     option: "lc",
 });

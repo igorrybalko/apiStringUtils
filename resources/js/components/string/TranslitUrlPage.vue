@@ -200,7 +200,7 @@ const result = ref("");
 const tableData = computed(() => {
     const convArr = Object.entries(cyrLetters);
     const rawArr = chunk(convArr, 6);
-    return rawArr.map((el, i) => {
+    return rawArr.map((el) => {
         return {
             from0: el[0][0],
             to0: el[0][1],

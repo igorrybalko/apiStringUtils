@@ -18,129 +18,164 @@ const app = createApp(root)
 
 app.use(pinia);
 
-function initMainComp(cName, path) {
-    const comp = defineAsyncComponent(() => import(/* @vite-ignore */ path));
-    app.component(cName, comp);
-}
-
 switch (location.pathname) {
     case "/url-encode": {
-        const cName = "UrlEncodePage";
-        initMainComp(cName, "./components/string/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/string/UrlEncodePage.vue")
+        );
+        app.component("UrlEncodePage", comp);
         break;
     }
 
     case "/url-decode": {
-        const cName = "UrlDecodePage";
-        initMainComp(cName, "./components/string/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/string/UrlDecodePage.vue")
+        );
+        app.component("UrlDecodePage", comp);
         break;
     }
 
     case "/base64-encode": {
-        const cName = "Base64EncodePage";
-        initMainComp(cName, "./components/base64/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/base64/Base64EncodePage.vue")
+        );
+        app.component("Base64EncodePage", comp);
         break;
     }
 
     case "/base64-decode": {
-        const cName = "Base64DecodePage";
-        initMainComp(cName, "./components/base64/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/base64/Base64DecodePage.vue")
+        );
+        app.component("Base64DecodePage", comp);
         break;
     }
 
     case "/img-to-base64": {
-        const cName = "ImgToBase64Page";
-        initMainComp(cName, "./components/base64/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/base64/ImgToBase64Page.vue")
+        );
+        app.component("ImgToBase64Page", comp);
         break;
     }
 
     case "/htpasswd": {
-        const cName = "HtpasswdPage";
-        initMainComp(cName, "./components/hash/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/hash/HtpasswdPage.vue")
+        );
+        app.component("HtpasswdPage", comp);
         break;
     }
 
     case "/md5-generator": {
-        const cName = "Md5Page";
-        initMainComp(cName, "./components/hash/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/hash/Md5Page.vue")
+        );
+        app.component("Md5Page", comp);
         break;
     }
 
     case "/sha-256": {
-        const cName = "Sha256Page";
-        initMainComp(cName, "./components/hash/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/hash/Sha256Page.vue")
+        );
+        app.component("Sha256Page", comp);
         break;
     }
 
     case "/translit-url": {
-        const cName = "TranslitUrlPage";
-        initMainComp(cName, "./components/string/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/string/TranslitUrlPage.vue")
+        );
+        app.component("TranslitUrlPage", comp);
         break;
     }
 
     case "/case-converter": {
-        const cName = "CaseConverterPage";
-        initMainComp(cName, "./components/text/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/text/CaseConverterPage.vue")
+        );
+        app.component("CaseConverterPage", comp);
         break;
     }
 
     case "/word-counter": {
-        const cName = "WordCounterPage";
-        initMainComp(cName, "./components/text/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/text/WordCounterPage.vue")
+        );
+        app.component("WordCounterPage", comp);
         break;
     }
 
     case "/strip-tags": {
-        const cName = "StripTagsPage";
-        initMainComp(cName, "./components/text/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/text/StripTagsPage.vue")
+        );
+        app.component("StripTagsPage", comp);
         break;
     }
 
     case "/unixtimestamp": {
-        const cName = "UnixtimestampPage";
-        initMainComp(cName, "./components/time/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/time/UnixtimestampPage.vue")
+        );
+        app.component("UnixtimestampPage", comp);
         break;
     }
 
     case "/uuid": {
-        const cName = "UuidPage";
-        initMainComp(cName, "./components/hash/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/hash/UuidPage.vue")
+        );
+        app.component("UuidPage", comp);
         break;
     }
 
     case "/json-stringify": {
-        const cName = "JsonStringifyPage";
-        initMainComp(cName, "./components/text/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/text/JsonStringifyPage.vue")
+        );
+        app.component("JsonStringifyPage", comp);
         break;
     }
 
     case "/json-minify": {
-        const cName = "JsonMinifyPage";
-        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/formatter/JsonMinifyPage.vue")
+        );
+        app.component("JsonMinifyPage", comp);
         break;
     }
 
     case "/html-formatter": {
-        const cName = "FormatterHtmlPage";
-        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/formatter/FormatterHtmlPage.vue")
+        );
+        app.component("FormatterHtmlPage", comp);
         break;
     }
 
     case "/minify-css": {
-        const cName = "MinifyCssPage";
-        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/formatter/MinifyCssPage.vue")
+        );
+        app.component("MinifyCssPage", comp);
         break;
     }
 
     case "/beautify-css": {
-        const cName = "BeautifyCssPage";
-        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/formatter/BeautifyCssPage.vue")
+        );
+        app.component("BeautifyCssPage", comp);
         break;
     }
 
     case "/beautify-js": {
-        const cName = "BeautifyJsPage";
-        initMainComp(cName, "./components/formatter/" + cName + ".vue");
+        const comp = defineAsyncComponent(
+            () => import("./components/formatter/BeautifyJsPage.vue")
+        );
+        app.component("BeautifyJsPage", comp);
         break;
     }
 }
