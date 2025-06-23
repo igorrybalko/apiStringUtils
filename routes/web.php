@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,6 @@ Route::get('html-formatter', [PageController::class, 'formatterHtml']);
 Route::get('minify-css', [PageController::class, 'minifyCss']);
 Route::get('beautify-js', [PageController::class, 'beautifyJs']);
 Route::get('beautify-css', [PageController::class, 'beautifyCss']);
+
+Route::get('article/{slug}', [ArticleController::class, 'getItem']);
+Route::get('article', [ArticleController::class, 'getList']);
