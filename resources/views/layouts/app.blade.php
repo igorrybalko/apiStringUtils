@@ -24,10 +24,17 @@ $mainCss = env('MAIN_CSS');
    content="@yield('metaDescription')"
   />
 
+  @hasSection('img')
   <meta
    property="og:image"
-   content="https://stringutils.online/img/icon600x600.png"
+   content="{{$appHost}}@yield('img')"
   />
+  @else
+  <meta
+   property="og:image"
+   content="{{$appHost}}/img/icon600x600.png"
+  />
+  @endif
   <meta property="og:image:width" content="600" />
   <meta property="og:image:height" content="600" />
 
@@ -54,7 +61,7 @@ $mainCss = env('MAIN_CSS');
      "@type": "WebSite",
      "name": "StringUtils",
      "alternateName": "String Utils",
-     "url": "https://stringutils.online"
+     "url": "{{$appHost}}"
    }
   </script>
     <!-- @php
@@ -97,8 +104,12 @@ $mainCss = env('MAIN_CSS');
         <div :class="{'dark-theme': darkTheme}" class="flex-1" ref="mainCont" data-dark="{{$cssClass}}">
             <header>
                 <div class="wrapper">
-                    <div class="flex justify-between header-inner">
-                        <a href="/">StringUtils</a>
+                    <div class="flex justify-between header-inner flex-col md:flex-row">
+                        <div class="flex justify-between">
+                            <a href="/">StringUtils</a>
+                            <div class="md:hidden" @click="toggleMenu">Menu</div>
+                        </div>
+                        
                         @include('includes.topmenu')
                     </div>
                 </div>
@@ -124,7 +135,7 @@ $mainCss = env('MAIN_CSS');
                                 <a href="/privacy-policy">Privacy Policy</a>
                             </div>
                         </nav>
-                        @include('includes.hitua')
+                        
                     </div>
                 </div>
             </div>

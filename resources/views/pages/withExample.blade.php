@@ -6,7 +6,8 @@
 @section('pageType', 'withExample')
 
 @section('content')
-<div class="lg:flex gap-x-4">
+@include('includes.backToHome')
+<div class="lg:flex gap-x-6">
     <div class="lg:w-3/4">
         <h1>{{ $title }}</h1>
         @if ($subtitle)

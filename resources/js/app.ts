@@ -3,6 +3,7 @@ import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
+import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 import AppShare from "./components/global/AppShare.vue";
 import AppBid from "./components/global/AppBid.vue";
@@ -17,6 +18,10 @@ const app = createApp(root)
     .component("AppBid", AppBid);
 
 app.use(pinia);
+
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component);
+}
 
 switch (location.pathname) {
     case "/url-encode": {

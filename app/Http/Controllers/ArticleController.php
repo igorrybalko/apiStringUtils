@@ -12,9 +12,6 @@ class ArticleController extends Controller {
   
     function getItem($slug){
         $page = DB::table( 'articles' )->where('slug', $slug)->first();
-        // echo '<pre>';
-        // var_dump($article);
-        // echo '</pre>';
 
         if(!isset($page)){
             return response()->view('errors.404', [], 404);
@@ -25,18 +22,15 @@ class ArticleController extends Controller {
             'title' => $page->title,
             'subtitle' => $page->subtitle,
             'metaDescription' => $page->metaDescription,
-            'canonical' => '/articles/' . $page->slug,
+            'canonical' => '/article/' . $page->slug,
             'content' => $page->content,
+            'img' => $page->img,
+            'img_alt' => $page->img_alt,
         ] );
     }
 
     function getList(){
-        $list = DB::table( 'articles' )->orderBy('id', 'desc')->paginate(3);
-        // echo '<pre>';
-        // var_dump($article);
-        // echo '</pre>'
-
-
-       return view( 'articles.list',  ['data' => $list->toArray()]);
+        $list = DB::table( 'articles' )->orderBy('id', 'desc')->paginate(6);
+        return view( 'articles.list',  ['data' => $list->toArray()]);
     }
 }

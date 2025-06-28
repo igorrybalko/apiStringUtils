@@ -1,24 +1,22 @@
 @extends('layouts.app')
 
 @section('canonical', '/article')
-@section('title', 'meta title list')
-@section('metaDescription', 'meta desc')
+@section('title', 'List of articles - StringUtils')
+@section('metaDescription', 'Blog of a service with online tools for formatting string data, generating a hash and other manipulations with text data')
 @section('pageType', 'article-list')
 
 @section('content')
+@include('includes.backToHome')
+<h1>List of articles</h1>
 
-<h1>List</h1>
-<!-- <pre>
-    <?php //var_dump($data)?>
-</pre> -->
-
-
-<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-4 mb-6">
+<div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6 mb-6">
     @foreach ($data['data'] as $item)
         <div>
             <div class="overflow-hidden h-50">
                 <a href="/article/{{ $item->slug }}">
-                    <img class="object-cover hover:scale-105 duration-500 h-full w-full" src="{{$item->img ? '/img/articles/' . $item->img : '/img/noimg.jpg'}}" />
+                    <img class="object-cover object-center hover:scale-105 duration-500 h-full w-full" 
+                    src="{{$item->img ? '/img/articles/' . $item->img : '/img/noimg.jpg'}}" 
+                    alt="{{$item->img_alt}}" />
                 </a>
             </div>
             <h4>

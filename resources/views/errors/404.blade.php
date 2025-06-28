@@ -4,7 +4,7 @@
 @section('pageType', '404')
 
 @section('content')
-<div class="lg:flex gap-x-4">
+<div class="lg:flex gap-x-6">
     <div class="lg:w-3/4">
         <h1>404</h1>
         <h2>Page not found</h2>

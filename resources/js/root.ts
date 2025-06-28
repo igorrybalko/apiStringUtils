@@ -14,6 +14,8 @@ export default {
 
         const mainCont = ref<HTMLDivElement>();
 
+        const showTopMenu = ref(false);
+
         const darkTheme = computed(() => commonStore.darkTheme);
 
         function toggleTheme() {
@@ -30,6 +32,10 @@ export default {
             }
         }
 
+        function toggleMenu(){
+            showTopMenu.value = !showTopMenu.value;
+        }
+
         onMounted(() => {
             const theme = cookies.get("theme");
             commonStore.darkTheme = Boolean(theme);
@@ -37,8 +43,10 @@ export default {
 
         return {
             toggleTheme,
+            toggleMenu,
             darkTheme,
             mainCont,
+            showTopMenu
         };
     },
 };
