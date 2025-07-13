@@ -135,7 +135,7 @@ $mainCss = env('MAIN_CSS');
                                 <a href="/privacy-policy">Privacy Policy</a>
                             </div>
                         </nav>
-                        
+                        @include('includes.hitua')
                     </div>
                 </div>
             </div>
