@@ -13,4 +13,5 @@
         </nav>
     
     </div>
+    <x-random-articles />
 </div>

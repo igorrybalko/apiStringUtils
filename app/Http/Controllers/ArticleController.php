@@ -26,6 +26,7 @@ class ArticleController extends Controller {
             'content' => $page->content,
             'img' => $page->img,
             'img_alt' => $page->img_alt,
+            'id' => $page->id,
         ] );
     }
 

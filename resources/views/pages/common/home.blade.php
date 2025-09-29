@@ -19,4 +19,19 @@
 <div class="info-text">
   {!! $content !!}
 </div>
+<el-divider></el-divider>
+<div>
+  <h3>Latest articles</h3>
+  <div class="grid lg:grid-cols-3 gap-6 mb-6">
+  @foreach ($articles as $item)
+    <div>
+      @include('includes.article.imgLinked', ['item' => $item, 'height' => 50])
+      <h4>
+          <a href="/article/{{ $item->slug }}">{{$item->title}}</a>
+      </h4>
+      <div>{{substr(strip_tags($item->content), 0, 220) . '...'}}</div>
+    </div>
+  @endforeach
+  </div>
+</div>
 @stop

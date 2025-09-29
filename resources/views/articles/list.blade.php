@@ -12,13 +12,7 @@
 <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-6 mb-6">
     @foreach ($data['data'] as $item)
         <div>
-            <div class="overflow-hidden h-50">
-                <a href="/article/{{ $item->slug }}">
-                    <img class="object-cover object-center hover:scale-105 duration-500 h-full w-full" 
-                    src="{{$item->img ? '/img/articles/' . $item->img : '/img/noimg.jpg'}}" 
-                    alt="{{$item->img_alt}}" />
-                </a>
-            </div>
+            @include('includes.article.imgLinked', ['item' => $item, 'height' => 50])
             <h4>
                 <a href="/article/{{ $item->slug }}">{{$item->title}}</a>
             </h4>

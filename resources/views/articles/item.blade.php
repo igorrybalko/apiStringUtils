@@ -20,16 +20,26 @@
     </li>
 </ol>
 
-<div class="mb-3 max-h-[250px]">
-    <img class="object-cover object-center h-full w-full max-h-[250px]" 
-    src="{{$img ? '/img/articles/' . $img : '/img/noimg.jpg'}}" alt="{{$img_alt}}" />
-</div>
+<div class="lg:flex gap-x-6">
 
-<h1>{{ $title }}</h1>
-@if ($subtitle)
-    <p>{{ $subtitle }}</p>
-@endif
-<div class="info-text">
-    {!! $content !!}
+    <div class="lg:w-3/4 mb-4">
+        <div class="mb-3 max-h-[250px]">
+            <img class="object-cover object-center h-full w-full max-h-[250px]" 
+            src="{{$img ? '/img/articles/' . $img : '/img/noimg.jpg'}}" alt="{{$img_alt}}" />
+        </div>
+
+        <h1>{{ $title }}</h1>
+        @if ($subtitle)
+            <p>{{ $subtitle }}</p>
+        @endif
+        <div class="info-text">
+            {!! $content !!}
+        </div>
+        
+    </div>
+
+    <div class="lg:w-1/4">
+        <x-random-articles :exclude-id="$id" :title="'Other articles'" />
+    </div>
 </div>
 @stop

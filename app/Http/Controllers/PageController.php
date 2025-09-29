@@ -37,6 +37,7 @@ class PageController extends Controller {
 
         $page = DB::table( 'pages' )->find( 1 );
         $menu = DB::table( 'main_menu' )->get();
+        $articles = DB::table('articles')->orderBy('id', 'desc')->limit(3)->get()->toArray();
 
         return view( 'pages.common.home', [
             'metaTitle' => $page->metaTitle,
@@ -45,6 +46,7 @@ class PageController extends Controller {
             'metaDescription' => $page->metaDescription,
             'content' => $page->content,
             'menu' => $menu,
+            'articles' => $articles,
         ] );
     }
 
