@@ -1,3 +1,4 @@
+import path from "path";
 import { defineConfig } from "vite";
 import laravel from "laravel-vite-plugin";
 import vue from "@vitejs/plugin-vue";
@@ -35,17 +36,25 @@ export default defineConfig({
             resolvers: [ElementPlusResolver()],
         }),
         Components({
-            resolvers: [ElementPlusResolver()],
+            resolvers: [
+                ElementPlusResolver({
+                    importStyle: "sass",
+                }),
+            ],
         }),
     ],
     resolve: {
         alias: {
             vue: "vue/dist/vue.esm-bundler.js",
+            "~/": `${path.resolve(__dirname, "resources")}/`,
         },
     },
     css: {
         preprocessorOptions: {
-            scss: { api: "modern-compiler" },
+            scss: {
+                api: "modern-compiler",
+                additionalData: `@use "~/sass/element/index.scss" as *;`,
+            },
         },
     },
 });

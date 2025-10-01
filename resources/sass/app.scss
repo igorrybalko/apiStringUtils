@@ -1,3 +1,8 @@
+@use "element-plus/theme-chalk/src/divider" as *;
+@use "element-plus/theme-chalk/src/menu" as *;
+@use "element-plus/theme-chalk/src/notification" as *;
+@use "element-plus/theme-chalk/src/icon" as *;
+
 @use "./modules/vendor" as *;
 @use "./modules/common" as *;
 @use "./modules/header" as *;

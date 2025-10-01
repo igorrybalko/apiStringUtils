@@ -25,6 +25,7 @@
 
 <script setup lang="ts">
 import { reactive, ref } from "vue";
+import { ElNotification } from "element-plus";
 
 import AppCopyBtn from "../common/AppCopyBtn.vue";
 
@@ -51,22 +52,30 @@ const rules = reactive<FormRules<RuleForm>>({
 const result = ref("");
 
 function b64DecodeUnicode(str: string) {
-  // Going backwards: from bytestream, to percent-encoding, to original string.
-  return decodeURIComponent(
-   atob(str)
-    .split('')
-    .map(function (c) {
-     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-    })
-    .join('')
-  );
- }
+    // Going backwards: from bytestream, to percent-encoding, to original string.
+    return decodeURIComponent(
+        atob(str)
+            .split("")
+            .map(function (c) {
+                return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+    );
+}
 
 const submitForm = (formEl: FormInstance | undefined) => {
     if (!formEl) return;
     formEl.validate((valid) => {
         if (valid) {
-            result.value = b64DecodeUnicode(form.text);
+            try {
+                result.value = b64DecodeUnicode(form.text);
+            } catch (err) {
+                ElNotification({
+                    title: "Error",
+                    message: "invalid data",
+                    type: "error",
+                });
+            }
         }
     });
 };

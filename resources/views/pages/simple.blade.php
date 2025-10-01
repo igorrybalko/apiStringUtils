@@ -10,12 +10,14 @@
 <div class="lg:flex gap-x-6">
     <div class="lg:w-3/4 mb-6">
         <h1>{{ $title }}</h1>
-            @if ($subtitle)
-                <p>{{ $subtitle }}</p>
-            @endif
-            @if ($viewTag)
-                <{{ $viewTag }}></{{ $viewTag }}>
-            @endif
+        @if ($subtitle)
+            <p>{{ $subtitle }}</p>
+        @endif
+        @if ($viewTag)
+        <div class="view-tag" data-id="{{ $viewTag }}">
+            <{{ $viewTag }} class="view-tag"></{{ $viewTag }}>
+        </div>
+        @endif
         <div class="info-text">
             {!! $content !!}
         </div>

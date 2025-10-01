@@ -15,7 +15,9 @@
             <p>{{ $subtitle }}</p>
             @endif
             @if ($viewTag)
-            <{{ $viewTag }}></{{ $viewTag }}>
+            <div class="view-tag" data-id="{{ $viewTag }}">
+                <{{ $viewTag }}></{{ $viewTag }}>
+            </div>
             @endif
             <div>
             {!! $content !!}
