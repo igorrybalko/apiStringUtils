@@ -22,7 +22,7 @@
         <el-divider />
 
         <el-form ref="formRef" :model="form" :rules="rules">
-            <div class="lg:w-1/6">
+            <div class="lg:w-1/5">
                 <el-form-item
                     label="Timestamp in seconds"
                     label-position="top"
