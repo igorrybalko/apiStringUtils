@@ -96,6 +96,8 @@ $mainCss = env('MAIN_CSS');
             "pageType": "@yield('pageType')"
         }
     </script>
+
+    <script src="https://analytics.ahrefs.com/analytics.js" data-key="+Tx1n5m1hluuReOANE7WbA" async></script>
         
  </head>
  <body class="page-@yield('pageType')">
