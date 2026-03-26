@@ -24,3 +24,4 @@ package-lock.json
 auto-imports.d.ts
 components.d.ts
 tsconfig.tsbuildinfo
+/.osp
