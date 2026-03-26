@@ -80,8 +80,6 @@ $mainCss = env('MAIN_CSS');
 
 <!-- <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/99afb49f8a29b1227c89b46f/script.js"></script> -->
 
-   <!-- Bidvertiser2100164 -->
-
    @vite(['resources/sass/app.scss', 'resources/css/style.css'])
 
     @php
@@ -127,7 +125,7 @@ $mainCss = env('MAIN_CSS');
             <div class="wrapper">
                 <div class="text-center text-xs mb-2">Convert your data as you want</div>
                 <div class="flex justify-between">
-                    <div>© 2025 StringUtils</div>
+                    <div>© 2026 StringUtils</div>
                     <div>
                         <nav class="mb-2">
                             <div>

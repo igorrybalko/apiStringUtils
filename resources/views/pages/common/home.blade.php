@@ -12,6 +12,9 @@
 @foreach ($menu as $item)
   <div class="mb-6">
     <a href="{{ $item->url }}">{{ $item->title }}</a>
+    <div class="text-sm text-gray-500">
+    {{ $item->description }}
+    </div>
   </div>
   @endforeach
 </div>

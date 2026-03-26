@@ -6,7 +6,6 @@ import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 import AppShare from "./components/global/AppShare.vue";
-import AppBid from "./components/global/AppBid.vue";
 import root from "./root";
 
 const pinia = createPinia();
@@ -14,8 +13,7 @@ pinia.use(piniaPluginPersistedstate);
 
 const app = createApp(root)
     .use(ElementPlus)
-    .component("AppShare", AppShare)
-    .component("AppBid", AppBid);
+    .component("AppShare", AppShare);
 
 app.use(pinia);
 
