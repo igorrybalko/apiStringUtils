@@ -10,14 +10,9 @@
         <h2>Page not found</h2>
         <a href="/">To Home Page</a>
         <el-divider></el-divider>
-        <app-bid></app-bid>
     </div>
     <div class="lg:w-1/4">
-        <div>
-            <a href='https://otieu.com/4/9405967' rel='nofollow noreferrer'>
-                <img src='/img/partn.jpg' alt='' />
-            </a>
-        </div>
+        <x-random-articles :title="'Articles'" />
     </div>
 </div>
 @stop
